@@ -154,7 +154,7 @@ export class CascadeComponent implements OnInit {
 
   onChange() {
     if (this.options) {
-      this.outer.emit(JSON.stringify(this.yhCascade.getCurrentValue()));
+      this.outer.emit(this.yhCascade.getCurrentValue());
     }
   }
 
