@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {cascadeJs} from '../assets/cascade'
+
 const json = [
   {
     id: '1',
@@ -109,7 +110,7 @@ const json = [
         display: block;
         position: absolute;
         top: 0;
-        right: 20px;
+        right: 14px;
       }
 
       /* 当前选中项 */
@@ -124,9 +125,15 @@ const json = [
         overflow: auto;
       }
 
+      ::ng-deep .layoutBox::-webkit-scrollbar {
+        width: 2px;
+      }
+
       ::ng-deep .item {
+        width: 120px;
         height: 26px;
-        margin: 10px 18px;
+        margin: 10px 10px;
+        text-align: center;
       }
 
     `
@@ -141,7 +148,7 @@ export class CascadeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(!this.yhCascade){
+    if (!this.yhCascade) {
       this.yhCascade = cascadeJs(json, 'cascade-wrap');
     }
   }
